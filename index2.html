@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+            background-color: darkgreen;
+        }
+        h2,input,button{
+            margin: 10px;
+            padding: 10px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h2>Guess The Number<h2>
+    <input type="number" placeholder="Enter any number" id="num1">
+    <button onclick="playgame()"> guess </button>
+    <p id="feedback"></p>
+    <p id="count"></p>
+    <script>
+        let target = Math.floor(Math.random()*100)+1;
+        console.log(target);
+        let count=0;
+        function playgame(){
+            let guess=parseInt(document.getElementById("num1").value);
+            count++;
+
+            if(guess < target ){
+                document.getElementById("feedback").innerText="Too Low";
+            }
+            else if(guess > target){
+                document.getElementById("feedback").innerText="Too High";
+            }
+            else {
+                document.getElementById("feedback").innerText="Your Guess is Correct";
+                document.getElementById("feedback").innerText="Your attempts are: "+count;
+}
+        }
+    </script>
+</body>
+</html>
